@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: diagnose
+  labels:
+    app: diagnose
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: diagnose
+  template:
+    metadata:
+      labels:
+        app: diagnose
+    spec:
+      containers:
+      - name: diagnose
+        image: radiusmethod/diagnose:1
